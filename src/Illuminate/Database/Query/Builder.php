@@ -13,12 +13,13 @@ use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Traits\Macroable;
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Database\ConnectionInterface;
+use Illuminate\Contracts\Database\QueryBuilder;
 use Illuminate\Database\Concerns\BuildsQueries;
 use Illuminate\Database\Query\Grammars\Grammar;
 use Illuminate\Database\Query\Processors\Processor;
 use Illuminate\Database\Eloquent\Builder as EloquentBuilder;
 
-class Builder
+class Builder implements QueryBuilder
 {
     use BuildsQueries, Macroable {
         __call as macroCall;

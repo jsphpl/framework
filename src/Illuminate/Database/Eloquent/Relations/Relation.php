@@ -9,11 +9,12 @@ use Illuminate\Support\Traits\Macroable;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Query\Expression;
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Contracts\Database\QueryBuilder;
 
 /**
  * @mixin \Illuminate\Database\Eloquent\Builder
  */
-abstract class Relation
+abstract class Relation implements QueryBuilder
 {
     use Macroable {
         __call as macroCall;
